@@ -1,3 +1,5 @@
+import {settings} from "./settings";
+
 export class Background {
     canvasElement: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
@@ -10,15 +12,10 @@ export class Background {
         this.createImage()
     }
 
-
-    private update() {
-        this.draw()
+    draw() {
+        this.ctx.drawImage(this.sprite,settings.sprite.sky.night.sx, settings.sprite.sky.night.sy, settings.sprite.sky.night.sw, settings.sprite.sky.night.sh, settings.sprite.sky.night.dx, settings.sprite.sky.night.dy,settings.sprite.sky.night.dw,settings.sprite.sky.night.dh);
     }
-
-    private draw() {
-        this.ctx.drawImage(this.sprite, 0, 0, 228,511, 0, 0, 228, 511);
-    }
-    private createImage() {
+    createImage() {
         this.sprite.src = "./img/sprite.png";
         this.sprite.addEventListener("load",()=>{
             this.draw();

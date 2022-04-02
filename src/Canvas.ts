@@ -1,4 +1,5 @@
 import {Background} from "./Background";
+import {Ground} from "./Ground";
 
 export class Canvas {
     canvasElement: HTMLCanvasElement;
@@ -9,5 +10,6 @@ export class Canvas {
         this.canvasElement = canvasElement; //creer les varibales
         this.ctx = ctx;
         this.background = new Background(canvasElement, ctx);
+        this.ground = new Ground(canvasElement, ctx);
     }
 }

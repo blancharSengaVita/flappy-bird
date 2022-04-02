@@ -21,6 +21,17 @@ export const settings = {
                 dw:290,
                 dh:511,
             }
+        },
+        ground : {
+                sx:(584),
+                sy:0,
+                sw:336,
+                sh: 112,
+                dx:0,
+                dy:112,
+                dw:336,
+                dh:112,
+
         }
     }
 }
