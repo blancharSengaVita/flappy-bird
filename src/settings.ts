@@ -71,7 +71,12 @@ export const settings = {
                 dw:52,
                 dh:317,
             },
-            gap: 80,
+            gap: {
+                v:80,
+                h:150,
+            },
+            maxCount: 2,
+
         }
     }
 }
