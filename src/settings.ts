@@ -4,7 +4,7 @@ export const settings = {
             day: {
                 sx:0,
                 sy:0,
-                sw:290,
+                sw:228,
                 sh: 511,
                 dx:0,
                 dy:0,
@@ -12,13 +12,13 @@ export const settings = {
                 dh:511,
             },
             night : {
-                sx:290,
+                sx:300,
                 sy:0,
-                sw:290,
+                sw:228,
                 sh: 511,
                 dx:0,
                 dy:0,
-                dw:290,
+                dw:228,
                 dh:511,
             }
         },
@@ -31,7 +31,7 @@ export const settings = {
                 dy:112,
                 dw:336,
                 dh:112,
-
+                maxOffset :322,
         }
     }
 }

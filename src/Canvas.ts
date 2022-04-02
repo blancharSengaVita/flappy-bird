@@ -5,6 +5,7 @@ export class Canvas {
     canvasElement: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D; //field declaration de variables
     background: Background;
+    ground: Ground;
 
     constructor(canvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
         this.canvasElement = canvasElement; //creer les varibales
