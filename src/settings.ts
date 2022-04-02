@@ -1,5 +1,6 @@
 export const settings = {
     sprite : {
+        source : './img/sprite.png',
         sky : {
             day: {
                 sx:0,
@@ -32,6 +33,22 @@ export const settings = {
                 dw:336,
                 dh:112,
                 maxOffset :322,
+        },
+        birds : {
+            x: 20,
+            y: 200,
+            sx: [6,62,118],
+            sy:982,
+            sw:34,
+            sh:24,
+            dx:34,
+            dy:24,
+            dw:34,
+            dh:24,
+            maxFallSpeed: 11,
+            maxAnimationFrame: 2,
+            animationSpeed : 7,
+            maxRotationAngle:90,
         }
     }
 }

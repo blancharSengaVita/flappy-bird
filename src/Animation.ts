@@ -14,6 +14,7 @@ export class Animation {
         this.ctx.clearRect(0,0, this.canvasElement.width, this.canvasElement.height)
         this.canvas.background.draw();
         this.canvas.ground.update();
+        this.canvas.bird.update();
         requestAnimationFrame(()=> this.animate()) //relance tous les 60SEC
     }
 
