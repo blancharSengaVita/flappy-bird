@@ -15,6 +15,7 @@ export class Animation {
         this.canvas.background.draw();
         this.canvas.ground.update();
         this.canvas.bird.update();
+        this.canvas.pipe.update();
         requestAnimationFrame(()=> this.animate()) //relance tous les 60SEC
     }
 

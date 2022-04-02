@@ -49,6 +49,29 @@ export const settings = {
             maxAnimationFrame: 2,
             animationSpeed : 7,
             maxRotationAngle:90,
+        },
+        pipes : {
+            top:{
+                sx: 113,
+                sy: 647,
+                sw:52,
+                sh:317,
+                dx:0,
+                dy:0,
+                dw:52,
+                dh:317,
+            },
+            bottom : {
+                sx: 168,
+                sy: 647,
+                sw:52,
+                sh:317,
+                dx:0,
+                dy:0,
+                dw:52,
+                dh:317,
+            },
+            gap: 80,
         }
     }
 }
