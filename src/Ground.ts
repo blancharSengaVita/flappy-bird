@@ -25,7 +25,7 @@ export class Ground {
         }
     }
     createImage() {
-        this.sprite.src = "./img/sprite.png";
+        this.sprite.src = settings.sprite.source;
         this.sprite.addEventListener("load", () => {
             this.update();
         });
