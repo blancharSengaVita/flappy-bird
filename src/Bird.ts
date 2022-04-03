@@ -1,4 +1,7 @@
 import {settings} from "./settings";
+import {Canvas} from "./Canvas";
+import {Pipe} from "./Pipe";
+import {Animation} from "./Animation";
 
 export class Bird {
     canvasElement: HTMLCanvasElement;
@@ -9,10 +12,14 @@ export class Bird {
     rotationAngle: number;
     position: { x: number, y: number };
     fallSpeed: number;
+    canvas: Canvas;
+    animation: Animation;
 
-    constructor(canvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+    constructor(canvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D, canvas: Canvas, animation: Animation) {
         this.canvasElement = canvasElement;
         this.ctx = ctx;
+        this.canvas = canvas;
+        this.animation = animation;
         this.image = new Image();
         this.frame = 0;
         this.counter = 0;
@@ -21,7 +28,7 @@ export class Bird {
         this.fallSpeed = 0;
         this.addEventlistener();
         this.createImage();
-        this.CollidingWithGround();
+
     }
 
     createImage() {
@@ -44,7 +51,9 @@ export class Bird {
         this.position.y += this.fallSpeed;
 
         this.draw();
-        this.CollidingWithGround()
+        this.CollidingWithGround();
+        this.collidingWithPipes()
+
     }
 
     draw() {
@@ -77,9 +86,19 @@ export class Bird {
         this.fallSpeed = -settings.sprite.birds.maxFallSpeed;
     }
 
-    private addEventlistener(){
+    addEventlistener(){
         window.addEventListener("keydown", (key:KeyboardEvent)=>{
             if(key.code === "Space") this.goUp();
+        })
+    }
+
+    private collidingWithPipes() {
+        this.canvas.pipes.forEach((pipe : Pipe)=>{
+            if (this.position.x + settings.sprite.birds.dw / 2 > pipe.positionTop.x && this.position.x - settings.sprite.birds.dw /2 < pipe.positionTop.x + settings.sprite.pipes.top.dw) {
+                if ((this.position.y - settings.sprite.birds.dh / 2) < pipe.positionTop.y + settings.sprite.pipes.top.dh || (this.position.y + settings.sprite.birds.dh/2) > pipe.positionBottom.y){
+                    this.animation.cancelAnimation();
+                }
+            }
         })
     }
 }

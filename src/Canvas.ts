@@ -3,6 +3,7 @@ import {Ground} from "./Ground";
 import {Bird} from "./Bird";
 import {Pipe} from "./Pipe";
 import {settings} from "./settings";
+import {Animation} from "./Animation";
 
 
 export class Canvas {
@@ -12,18 +13,20 @@ export class Canvas {
     ground: Ground;
     bird: Bird;
     pipes: Pipe[];
+    animation: Animation;
 
-    constructor(canvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
-        this.canvasElement = canvasElement; //creer les varibales
+    constructor(canvasElement: HTMLCanvasElement, ctx: CanvasRenderingContext2D, animation :Animation) {
+        this.canvasElement = canvasElement;
         this.ctx = ctx;
         this.pipes = [];
+        this.animation = animation; //creer les varibales
 
         this.createPipes();
 
 
-        this.background = new Background(canvasElement, ctx);
-        this.ground = new Ground(canvasElement, ctx);
-        this.bird = new Bird(canvasElement, ctx);
+        this.background = new Background(this.canvasElement, this.ctx);
+        this.ground = new Ground(this.canvasElement, this.ctx);
+        this.bird = new Bird(this.canvasElement, this.ctx, this, this.animation);
     }
 
     private createPipes() {

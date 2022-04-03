@@ -18,7 +18,7 @@ export class Pipe {
         this.pipes = pipes;
         this.positionTop = {
             x: this.pipes.length ===0 ? this.startX : this.pipes[this.pipes.length-1].positionTop.x + settings.sprite.pipes.gap.h,
-            y:-Math.floor(Math.random()* settings.sprite.pipes.top.dh/2)};
+            y:-Math.floor(Math.random() * settings.sprite.pipes.top.dh/2)}
         this.positionBottom = {x:this.positionTop.x, y:this.positionTop.y + settings.sprite.pipes.top.dh + settings.sprite.pipes.gap.v};
         this.start = false;
 
@@ -36,7 +36,12 @@ export class Pipe {
             this.positionTop.x--;
             this.positionBottom.x = this.positionTop.x;
         }
-
+        if (this.positionTop.x < -settings.sprite.pipes.top.dw){
+            this.positionTop = {
+                x: this.startX,
+                y:-Math.floor(Math.random() * settings.sprite.pipes.top.dh/2)}
+            this.positionBottom = {x:this.positionTop.x, y:this.positionTop.y + settings.sprite.pipes.top.dh + settings.sprite.pipes.gap.v};
+        }
         this.draw();
     }
 

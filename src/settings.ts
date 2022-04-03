@@ -45,7 +45,7 @@ export const settings = {
             dy:24,
             dw:34,
             dh:24,
-            maxFallSpeed: 11,
+            maxFallSpeed: 7,
             maxAnimationFrame: 2,
             animationSpeed : 7,
             maxRotationAngle:90,
