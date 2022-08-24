@@ -21,7 +21,7 @@ export class Animation {
             this.canvas.ground.update();
             this.canvas.bird.update();
             this.canvas.pipes.forEach((pipe : Pipe)=>pipe.update())
-            requestAnimationFrame(()=> this.animate()) //relance tous les 60SEC
+            requestAnimationFrame(()=> this.animate()) //relance tous les 60 par secondeTR
         }
     }
     cancelAnimation(){
